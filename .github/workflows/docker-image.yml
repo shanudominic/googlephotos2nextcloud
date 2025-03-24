@@ -7,12 +7,13 @@ on:
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag edomsha/googlephotos2nextcloud:latest
+
+  push:
+    runs-on: ubuntu-latest
     - name: docker push
       run: docker push edomsha/googlephotos2nextcloud:latest
