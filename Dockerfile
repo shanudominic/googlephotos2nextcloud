@@ -8,11 +8,11 @@ WORKDIR /app
 COPY . .
 WORKDIR /app/src
 RUN go mod tidy
-RUN go build -o /googlephotos2nextcloud
+RUN go build -o /media2nextcloud
 
 # Use a minimal image for the final container
 FROM gcr.io/distroless/base-debian12
 
-COPY --from=builder /googlephotos2nextcloud /googlephotos2nextcloud
+COPY --from=builder /media2nextcloud /media2nextcloud
 
-ENTRYPOINT ["/googlephotos2nextcloud"]
+ENTRYPOINT ["/media2nextcloud"]

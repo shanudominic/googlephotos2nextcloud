@@ -9,5 +9,6 @@ services:
       - NEXTCLOUD_USER=${NEXTCLOUD_USER}
       - NEXTCLOUD_PASSWORD=${NEXTCLOUD_PASSWORD}
       - PHOTOS_DIR=/photos
+      - PARALLEL_UPLOADS=${PARALLEL_UPLOADS}
     volumes:
-      - /Users/edomsha/Desktop/photos/Takeout/Google Photos:/photos
+      - ${PHOTOS_MNT}:/photos
